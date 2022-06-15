@@ -22,6 +22,7 @@ import DomRef from './components/ref/DomRef';
 import CounterClass from './components/class/CounterClass';
 import Private from './components/auth/Private';
 import Profile from './components/auth/Profile';
+import { List } from './components/generics/List';
 
 function App() {
   const personName = {
@@ -270,7 +271,7 @@ function App() {
               <h2 className='font-bold text-white'>Class Component</h2>
             </div>
             <div className='w-64 bg-gray-100 shadow-md rounded-md h-40 px-3 py-3'>
-              {/* UseRef Hook */}
+              {/* Class Component */}
               <CounterClass message='The count value is'></CounterClass>
             </div>
           </div>
@@ -279,8 +280,41 @@ function App() {
               <h2 className='font-bold text-white'>Class Component Props</h2>
             </div>
             <div className='w-64 bg-gray-100 shadow-md rounded-md h-40 px-3 py-3'>
-              {/* UseRef Hook */}
+              {/* Class Component Props */}
               <Private isLoggedIn={false} component={Profile}></Private>
+            </div>
+          </div>
+          <div>
+            <div className='flex justify-start'>
+              <h2 className='font-bold text-white'>Generic Props</h2>
+            </div>
+            <div className='w-full flex gap-4 bg-gray-100 shadow-md rounded-md h-40 px-3 py-3'>
+              {/* Generic Props */}
+              {/* <List
+            items={['Thor', 'Hulk', 'Ironman']}
+            onClick={item => console.log(item)}
+          ></List>
+          <List items={[1, 2, 3]} onClick={item => console.log(item)}></List> */}
+              <List
+                items={[
+                  {
+                    id: 1,
+                    first: 'Vincent',
+                    last: 'Enriquez'
+                  },
+                  {
+                    id: 2,
+                    first: 'Shanine',
+                    last: 'Plaza'
+                  },
+                  {
+                    id: 3,
+                    first: 'Lykka',
+                    last: 'Plaza'
+                  }
+                ]}
+                onClick={item => console.log(item)}
+              ></List>
             </div>
           </div>
         </div>
